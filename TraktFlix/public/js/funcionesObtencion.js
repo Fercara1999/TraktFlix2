@@ -110,7 +110,7 @@ async function obtenDatosPelicula() {
                 '<p style="color: white;"><strong>Trailer:</strong> <a href="https://www.youtube.com/watch?v=' + claveTrailer + '" target="_blank">Ver trailer</a></p>' +
                 '<button style="margin-right: 10px;" class="btn btn-primary" onclick="mostrarDialogoListas()">Añadir a lista</button>' +
                 '<button style="margin-right: 10px;" class="btn btn-primary">Marcar como vista</button>' +
-                '<button class="btn btn-primary">Marcar como favoritas</button>' +
+                '<button class="btn btn-primary" onclick="anadeFavoritas()">Añadir como favorita</button>' +
                 '</div>';
 
             fetch('/api/movie-poster/' + idPelicula)
@@ -462,7 +462,7 @@ function eliminaLista(listasNoSeleccionadas) {
         });
 }
 
-function anadeaFavoritas(){
+function anadeFavoritas(){
     var urlParams = new URLSearchParams(window.location.search);
     var idPelicula = urlParams.get('id');
 
